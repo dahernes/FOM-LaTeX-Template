@@ -33,6 +33,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
 \usepackage{fancybox}
+\usepackage{scrlayer}
 \usepackage[a4paper, left=4cm, right=2cm, top=4cm, bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{colortbl}
@@ -89,6 +90,8 @@
 \usepackage{rotating} % vertikal schreiben
 \usepackage{mdwlist}
 \usepackage{tabularx}% für Breitenangabe
+\usepackage{array}
+\usepackage{longtable}
 
 %-----------------------------------
 % sauber formatierter Quelltext
@@ -134,6 +137,7 @@
 % Biblatex
 
 \usepackage{url}
+\usepackage{bibentry}
 \urlstyle{same}
 
 %%%% Neuer Leitfaden (2018)
@@ -332,30 +336,30 @@ mincrossrefs = 1
 % Inhaltsverzeichnis
 %-----------------------------------
 % Um das Tabellen- und Abbbildungsverzeichnis zu de/aktivieren ganz oben in Documentclass schauen
-\setcounter{page}{2}
-\addtocontents{toc}{\protect\enlargethispage{-20mm}}% Die Zeile sorgt dafür, dass das Inhaltsverzeichnisseite auf die zweite Seite gestreckt wird und somit schick aussieht. Das sollte eigentlich automatisch funktionieren. Wer rausfindet wie, kann das gern ändern.
-\setcounter{tocdepth}{4}
-\tableofcontents
-\newpage
+%\setcounter{page}{2}
+%\addtocontents{toc}{\protect\enlargethispage{-20mm}}% Die Zeile sorgt dafür, dass das Inhaltsverzeichnisseite auf die zweite Seite gestreckt wird und somit schick aussieht. Das sollte eigentlich automatisch funktionieren. Wer rausfindet wie, kann das gern ändern.
+%\setcounter{tocdepth}{4}
+%\tableofcontents
+%\newpage
 
 %-----------------------------------
 % Abbildungsverzeichnis
 %-----------------------------------
-\listoffigures
-\newpage
+%\listoffigures
+%\newpage
 %-----------------------------------
 % Tabellenverzeichnis
 %-----------------------------------
-\listoftables
-\newpage
+%\listoftables
+%\newpage
 %-----------------------------------
 % Abkürzungsverzeichnis
 %-----------------------------------
 % Falls das Abkürzungsverzeichnis nicht im Inhaltsverzeichnis angezeigt werden soll
 % dann folgende Zeile auskommentieren.
-\addcontentsline{toc}{section}{\abbreHeadingName}
-\input{abkuerzungen/acronyms}
-\newpage
+%\addcontentsline{toc}{section}{\abbreHeadingName}
+%\input{abkuerzungen/acronyms}
+%\newpage
 
 %-----------------------------------
 % Symbolverzeichnis
@@ -363,16 +367,16 @@ mincrossrefs = 1
 % In Overleaf führt der Einsatz des Symbolverzeichnisses zu einem Fehler, der aber ignoriert werdne kann
 % Falls das Symbolverzeichnis nicht im Inhaltsverzeichnis angezeigt werden soll
 % dann folgende Zeile auskommentieren.
-\addcontentsline{toc}{section}{\symheadingname}
+%\addcontentsline{toc}{section}{\symheadingname}
 \input{skripte/symbolDef}
-\listofsymbols
-\newpage
+%listofsymbols
+%\newpage
 
 %-----------------------------------
 % Glossar
 %-----------------------------------
-\printnoidxglossaries
-\newpage
+%\printnoidxglossaries
+%\newpage
 
 %-----------------------------------
 % Sperrvermerk
@@ -394,21 +398,21 @@ mincrossrefs = 1
 %-----------------------------------
 % Apendix / Anhang
 %-----------------------------------
-\newpage
-\section*{\AppendixName} %Überschrift "Anhang", ohne Nummerierung
-\addcontentsline{toc}{section}{\AppendixName} %Den Anhang ohne Nummer zum Inhaltsverzeichnis hinzufügen
+%\newpage
+%\section*{\AppendixName} %Überschrift "Anhang", ohne Nummerierung
+%\addcontentsline{toc}{section}{\AppendixName} %Den Anhang ohne Nummer zum Inhaltsverzeichnis hinzufügen
 
-\begin{appendices}
+%\begin{appendices}
 % Nachfolgende Änderungen erfolgten aufgrund von Issue 163
-\makeatletter
-\renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
-\makeatother
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
-	\renewcommand{\thesection}{\AppendixName\ \arabic{section}}
-	\renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
-	\input{kapitel/anhang/anhang}
-\end{appendices}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+%\makeatletter
+%\renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
+%\makeatother
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
+%	\renewcommand{\thesection}{\AppendixName\ \arabic{section}}
+%	\renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
+%	\input{kapitel/anhang/anhang}
+%\end{appendices}
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 %-----------------------------------
 % Literaturverzeichnis
@@ -460,7 +464,7 @@ mincrossrefs = 1
 % Die Option heading=bibintoc würde die Internetquelle als eigenen Eintrag im
 % Inhaltsverzeicnis anzeigen.
 %\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
-\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
+%\printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
 
-\input{kapitel/anhang/erklaerung}
+%\input{kapitel/anhang/erklaerung}
 \end{document}

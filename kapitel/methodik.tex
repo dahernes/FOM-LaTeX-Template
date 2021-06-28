@@ -1,0 +1,64 @@
+%\newpage
+\section{Methodik}
+Der Aufbau dieser Thesis erfolgt nach Vorbild des Vertiefungsmodells 
+nach Phillip Mayring, welcher Bestandteile der quantitativen und 
+qualitativen Analysen zu einem kombinierten Gesamtmodell vereint\footcite[Vgl. ][]{Mayring2001}.  
+Auf Basis des Vertiefungsmodells wird die quantitative Untersuchung 
+in Anlehnung an dem CRISP-DM durchgeführt, einem Standartprozessmodell 
+zur Modellierung von Data Mining Projekten im Bereich der 
+computerunterstützen Analyse\footcite[Vgl. ][]{Wirth2000}. Die aus dieser Untersuchung 
+ermittelten Ergebnisse werden daraufhin vertieft, verglichen sowie diskutiert und 
+bilden die qualitative Untersuchung ab.
+
+Im ersten Teil dieser Thesis wird der aktuelle Stand der kommunalen Stadtentwicklung 
+sowie der Entwicklung des Wohnungsbedarfs der Stadt Essen dargestellt\footcite[Vgl. ][]{StadtEssen2018}. 
+Zudem werden die traditionellen und neuartigen Faktoren definiert und deren Unterschiede 
+beschrieben, welche für die Beantwortung der zentralen Fragestellung mitunter 
+untersucht werden\footcite[Vgl. ][]{Asaftei2018}.
+
+Die Beschreibung, Aufbereitung und Zusammenführung der Datensätze, bestehend aus den 
+verschiedenen Faktoren der traditionellen und neuartigen immobilienwirtschaftlichen 
+Faktoren erfolgt im zweiten Teil. Der Hauptschwerpunkt dieses Arbeitsschrittes, liegt 
+neben der Beschreibung aller genutzten Datensätze, in der explorativen Datenanalyse sowie 
+deren Aufarbeitung für den Einsatz in den Prognosemodellen. Die Aufbereitung umfasst 
+verschiedene Methoden von der Datenbereinigung\footcite[Vgl. ][]{Rahm2000}, bis hin zur 
+Transformationsmethoden\footcite[Vgl. ][]{Box1964} sowie Encoding Varianten\footcite[Vgl. ][]{Cerda2018}, 
+um diese bestmöglich für die Analyse vorzubereiten. Im letzten Abschnitt des zweiten 
+Teils wird der gesamte Datensatz für das Training in den Modellen 
+vorbereitet. Dieser wird für diesen Zweck in drei Teile aufgeteilt. Einem Trainings- 
+sowie Testdatensatz, welche für den Einsatz an den Modellen genutzt werden wird und 
+einem zufällig auserwählten Validierungsdatensatz.
+
+Im letzten Teil der Analyse werden nunmehr Prognosemodelle auf Basis der zuvor 
+aufgearbeiteten Daten eingesetzt, indem diese mithilfe des Training- sowie Testdatensatzes 
+trainiert werden, so dass diese an dem Validierungsdatensatz durchgeführt werden können. 
+Die Prognosen des Validierungsdatensatzes bilden einen essenziellen Teil der Diskussion ab. 
+Die Optimierung der Hyperparameter, der genutzten Modelle erfolgt mit Hilfe der Random 
+Search Methode\footcite[Vgl. ][]{Bergstra2012}.
+
+Folgende Prognosemodelle kommen für die Analyse zum Einsatz:
+
+\begin{itemize}
+    \item Lineare Regression\footcite[Vgl. ][]{Verbeek2017}
+    \item Random Forest\footcite[Vgl. ][]{Breiman2001}
+    \item XGBoost\footcite[Vgl. ][]{Chen2016}
+    \item Multilayer Perceptron mit mehr als zwei Ebenen\footcite[Vgl. ][]{Brause1991, Goodfellow2017} 
+\end{itemize}
+
+Die Effizienz dieser Modelle werden anhand ihres Gütemaßes dem adjusted R² (kurz adj. R²) 
+sowie der Verlustmessung Root Mean Squared Error (kurz RSME) bewertet\footcite[Vgl. ][]{Goodfellow2017,Larose2015}.
+Zudem können auf Basis der erstellten Prognosen die einflussreichsten Faktoren aller 
+Modelle entnommen werden. Die Effizienz sowie die Faktoren der Modelle, welche einen 
+hohen Einfluss die Prognose haben sind weitere Bestandteile der Ergebnisdiskussion neben 
+den Prognosen.
+\newpage
+Validiert werden die Ergebnisse anhand zweier Benchmarks. Diese sind zu einem der 
+ortsübliche Mietspiegel\footcite[Vgl. ][]{AmtfurStadterneuerungundBodenmanagement-StadtEssen2020}, 
+der durch die Stadt Essen erhoben worden ist, sowie den 
+ermittelten Angebotsmieten der Zeiträume zweites Quartal 2018 bis erstes Quartal 2019, 
+welcher durch die CBRE, einen internationalen Dienstleister aus der Immobilienwirtschaft, 
+im LEG-Wohnungsmarktreport 2019 erhoben worden \footcite[Vgl. ][]{LEG2019}.  
+
+Nach der Analyse werden die Prognosen, die Effizienz der Modelle sowie die einflussreichsten 
+Faktoren im fünften Teil diese Thesis in der Ergebnisdiskussion vertieft, indem diese 
+übersichtlich aufgearbeitet und dementsprechend gegenübergestellt werden. 
